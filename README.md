@@ -3,7 +3,7 @@
 
 [![Shitcoded][ulaanbaatar-badge]][ub-wiki]
 
-Devola is real-time music visualizing tool that able to combine multiple types of visualing effects.
+Devola is real-time music visualizer with various form of input/output. Specially designing for live music performance.
 
 
 ## Copyright & License
