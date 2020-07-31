@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxPostGlitch.h"
 
 class ofApp : public ofBaseApp{
 
@@ -20,5 +21,23 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+        ofVideoGrabber      vidGrabber;
+        ofPixels            videoInverted;
+        ofTexture           videoTexture;
+        ofFbo               myFbo;
+        ofxPostGlitch       myGlitch;
+    
+        int camWidth;
+        int camHeight;
+        
+        bool isBlankMode;
+        bool isGlitchMode;
+    
+    private:
+        
+        void initMode();
+        void switchMode(int key);
+        
 		
 };
