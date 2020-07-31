@@ -31,28 +31,35 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     
     // Glitch Setup
-    myFbo.allocate(640,480);
+    myFbo.allocate(1024,768);
     myGlitch.setup(&myFbo);
+    myGlitch.setFx(OFXPOSTGLITCH_CR_HIGHCONTRAST,true);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    ofBackground(0, 0, 0);
     
     if(isGlitchMode) {
+        myFbo.begin();
+        ofClear(0, 0, 0,255);
         vidGrabber.update();
         
         if(vidGrabber.isFrameNew()){
             ofPixels & pixels = vidGrabber.getPixels();
             for(size_t i = 0; i < pixels.size(); i++){
-                //invert the color of the pixel
-                videoInverted[i] = 255 - pixels[i];
+                // invert the color of the pixel
+                // videoInverted[i] = 255 - pixels[i];
+                videoInverted[i] = pixels[i];
             }
             //load the inverted pixels
             videoTexture.loadData(videoInverted);
         }
-    } else if(isBlankMode) {
         
+        ofSetHexColor(0xffffff);
+        videoTexture.draw(0, 0, 1024, 768);
+        myFbo.end();
+    } else if(isBlankMode) {
+        ofBackground(0, 0, 0);
     }
     
     for (auto &vert : line.getVertices()){
@@ -65,10 +72,14 @@ void ofApp::update(){
 void ofApp::draw(){
     
     if(isGlitchMode) {
-        ofSetHexColor(0xffffff);
-        // vidGrabber.draw(0, 0);
-        videoTexture.draw(0, 0, 1024, 768);
-        // videoTexture.draw(20,20, camWidth, camHeight);
+        
+//        ofSetHexColor(0xffffff);
+//        vidGrabber.draw(0, 0);
+//        videoTexture.draw(0, 0, 1024, 768);
+        myGlitch.generateFx();
+        ofSetColor(255);
+        myFbo.draw(0,0);
+        
     } else if(isBlankMode) {
         ofClear(0,255);
     }
