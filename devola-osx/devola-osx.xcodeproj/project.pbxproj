@@ -141,6 +141,306 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>E73F410C970D2E4838CA70CC</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Twist.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Twist.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>5EA33BF89F6767831A0F2947</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Swell.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Swell.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>673BFC492F1CBB01738F8953</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Slitscan.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Slitscan.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>6D1D35C9B4C3812E82CD338B</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Shaker.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Shaker.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>A80B1460DA3F138EC03F2BE8</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>PGShaderConstants.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/PGShaderConstants.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>E75A80A53898C14122D60D5F</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Outline.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Outline.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>BDFB26533D5FB266CE1DA7F8</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Noise.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Noise.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>FB2B34090B036FBB4D9045B9</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Invert.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Invert.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>B83ECE158380A91FD0B5BC9B</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Glow.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Glow.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>8F328F84C50773556DA2BE8A</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CutSlider.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CutSlider.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>69333F6CF7B296EF519BA5E8</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CrRedraise.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CrRedraise.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>066E198E77AC6DC964770A36</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CrRedinvert.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CrRedinvert.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>D19B58A354BB1D364D901FEA</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CrHighContrast.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CrHighContrast.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>CDFA2CD25416427C1C154D52</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CrGreenraise.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CrGreenraise.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>BAE9044A7BC3DCBB90B5BC11</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CrGreeninvert.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CrGreeninvert.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>E1DDE8823FCE4F40D0DBF56B</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CrBlueraise.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CrBlueraise.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>A446F99BA36D4E77AD26E7FD</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>CrBlueinvert.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/CrBlueinvert.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>2FFED73651CC4F352E3E9FCE</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>74856A3A4CED7E121D6A4233</string>
+					<string>A446F99BA36D4E77AD26E7FD</string>
+					<string>E1DDE8823FCE4F40D0DBF56B</string>
+					<string>BAE9044A7BC3DCBB90B5BC11</string>
+					<string>CDFA2CD25416427C1C154D52</string>
+					<string>D19B58A354BB1D364D901FEA</string>
+					<string>066E198E77AC6DC964770A36</string>
+					<string>69333F6CF7B296EF519BA5E8</string>
+					<string>8F328F84C50773556DA2BE8A</string>
+					<string>B83ECE158380A91FD0B5BC9B</string>
+					<string>FB2B34090B036FBB4D9045B9</string>
+					<string>BDFB26533D5FB266CE1DA7F8</string>
+					<string>E75A80A53898C14122D60D5F</string>
+					<string>A80B1460DA3F138EC03F2BE8</string>
+					<string>6D1D35C9B4C3812E82CD338B</string>
+					<string>673BFC492F1CBB01738F8953</string>
+					<string>5EA33BF89F6767831A0F2947</string>
+					<string>E73F410C970D2E4838CA70CC</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>shaders</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>74856A3A4CED7E121D6A4233</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Convergence.h</string>
+				<key>path</key>
+				<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders/Convergence.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>CCF78E054D5A350BE4F4309E</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -162,6 +462,7 @@
 				<array>
 					<string>C4F93B84FF35BC8EFF0AFA25</string>
 					<string>CCF78E054D5A350BE4F4309E</string>
+					<string>2FFED73651CC4F352E3E9FCE</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -9167,6 +9468,7 @@ fi
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/libs/opencv/license</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/src</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src</string>
+						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/libs</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/src</string>
 					</array>
@@ -9286,6 +9588,7 @@ fi
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/libs/opencv/license</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/src</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src</string>
+						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/libs</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/src</string>
 					</array>
@@ -12168,6 +12471,7 @@ fi
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/libs/opencv/license</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/src</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src</string>
+						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/libs</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/src</string>
 					</array>
@@ -12307,6 +12611,7 @@ fi
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/libs/opencv/license</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/src</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src</string>
+						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/libs</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/src</string>
 					</array>
@@ -12524,6 +12829,7 @@ fi
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/libs/opencv/license</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/src</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src</string>
+						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/libs</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/src</string>
 					</array>
@@ -12653,6 +12959,7 @@ fi
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/libs/opencv/license</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxOpenCv/src</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src</string>
+						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxPostGlitch/src/shaders</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/libs</string>
 						<string>../../../Development/openFrameworks/of_v0.11.0_osx_release/addons/ofxVectorGraphics/src</string>
 					</array>

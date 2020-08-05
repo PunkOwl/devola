@@ -27,6 +27,11 @@ class ofApp : public ofBaseApp{
         ofTexture           videoTexture;
         ofFbo               myFbo;
         ofxPostGlitch       myGlitch;
+        ofEasyCam           camera;
+        ofTexture           texture;
+        ofImage             lenna;
+        bool                bDrawLenna;
+        bool                bShowHelp;
     
         int camWidth;
         int camHeight;
