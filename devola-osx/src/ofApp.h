@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxPostGlitch.h"
+#include "ofxNetwork.h"
 
 class ofApp : public ofBaseApp{
 
@@ -12,7 +13,7 @@ class ofApp : public ofBaseApp{
 
 		void keyPressed(int key);
 		void keyReleased(int key);
-		void mouseMoved(int x, int y );
+		void mouseMoved(int x, int y);
 		void mouseDragged(int x, int y, int button);
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);
@@ -21,7 +22,8 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-    
+        
+        ofxUDPManager       UDPConnection;
         ofVideoGrabber      vidGrabber;
         ofPixels            videoInverted;
         ofTexture           videoTexture;
@@ -32,7 +34,9 @@ class ofApp : public ofBaseApp{
         ofImage             lenna;
         bool                bDrawLenna;
         bool                bShowHelp;
-    
+        float              cameraScaleFactor = 1;
+        float              cameraScaleUnit = 0.01;
+        
         int camWidth;
         int camHeight;
         
@@ -43,6 +47,8 @@ class ofApp : public ofBaseApp{
         
         void initMode();
         void switchMode(int key);
+        void cameraScaleKey(int key);
+        void UDPHandler();
         
 		
 };

@@ -4,11 +4,22 @@ ofPolyline line;
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    /* Printing the initial screen sizes */
+    ofLogNotice() << ofGetWindowPositionX();
+    ofLogNotice() << ofGetWindowPositionY();
+    ofLogNotice() << ofGetScreenWidth();
+    ofLogNotice() << ofGetScreenHeight();
+    
+    int screenWidth = ofGetScreenWidth();
+    int screenHeight = ofGetScreenHeight();
+    
+    /* Window Title */
     ofSetWindowTitle("PunkOwl Devola v0.1 - vonqo");
     ofBackground(0,0,0);
 
-    // Camera Setup
-    camWidth = 320;  // try to grab at this size.
+    /* Camera Setup */
+    /* 320 x 240 is constant! */
+    camWidth = 320;
     camHeight = 240;
     
     // get back a list of devices.
@@ -30,68 +41,49 @@ void ofApp::setup(){
     videoInverted.allocate(camWidth, camHeight, OF_PIXELS_RGB);
     videoTexture.allocate(videoInverted);
     
-    // Glitch Setup
+    /* Glitch Setup */
     ofSetVerticalSync(true);
     camera.setDistance(400);
     ofSetCircleResolution(3);
-
-    lenna.loadImage("lenna.png");
-    bDrawLenna = false;
+    
     bShowHelp  = true;
-    myFbo.allocate(1024, 768);
-
+    myFbo.allocate(screenWidth, screenHeight);
     myGlitch.setup(&myFbo);
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::update() {
+    UDPHandler();
+    
     if(isGlitchMode) {
-//        myFbo.begin();
-//        ofClear(0, 0, 0,255);
-//        if (!bDrawLenna){
-//            camera.begin();
-//
-//            for (int i = 0;i < 100;i++){
-//                if        (i % 5 == 0)ofSetColor(50 , 255, 100);
-//                else if (i % 9 == 0)ofSetColor(255, 50, 100);
-//                else                ofSetColor(255, 255, 255);
-//
-//                ofPushMatrix();
-//                ofRotate(ofGetFrameNum(), 1.0, 1.0, 1.0);
-//                ofTranslate((ofNoise(i/2.4)-0.5)*1000,
-//                            (ofNoise(i/5.6)-0.5)*1000,
-//                            (ofNoise(i/8.2)-0.5)*1000);
-//                ofCircle(0, 0, (ofNoise(i/3.4)-0.5)*100+ofRandom(3));
-//                ofPopMatrix();
-//            }
-//
-//            camera.end();
-//        }else{
-//            ofSetColor(255);
-//            lenna.draw(0, 0);
-//        }
-//        myFbo.end();
-        
         myFbo.begin();
         vidGrabber.update();
-        if(vidGrabber.isFrameNew()){
-            ofPixels & pixels = vidGrabber.getPixels();
-            for(size_t i = 0; i < pixels.size(); i++){
-                // invert the color of the pixel
-                // videoInverted[i] = 255 - pixels[i];
-                videoInverted[i] = pixels[i];
-            }
-            //load the inverted pixels
-            videoTexture.loadData(videoInverted);
+        if(vidGrabber.isFrameNew()) {
+            ofPixels &pixels = vidGrabber.getPixels();
+            pixels.mirror(false, true);
+            videoTexture.loadData(pixels);
         }
         
         ofSetHexColor(0xffffff);
-        videoTexture.draw(0, 0, 1024, 768);
+        int screenWidth = ofGetScreenWidth();
+        int screenHeight = ofGetScreenHeight();
+        
+        float widthScale = (screenWidth * cameraScaleFactor);
+        float heightScale = (screenHeight * cameraScaleFactor);
+        
+        float xStart = (screenWidth - widthScale) / 2;
+        float yStart = (screenHeight - heightScale) / 2;
+        
+        ofLogNotice() << xStart;
+        ofLogNotice() << yStart;
+        ofLogNotice() << "=====================";
+        
+        videoTexture.draw(xStart, yStart, widthScale, heightScale);
         myFbo.end();
     } else if(isBlankMode) {
+        
         ofBackground(0, 0, 0);
     }
-    
     for (auto &vert : line.getVertices()){
         vert.x += ofRandom(-1,1);
         vert.y += ofRandom(-1,1);
@@ -101,17 +93,6 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     if(isGlitchMode) {
-//        ofSetHexColor(0xffffff);
-//        vidGrabber.draw(0, 0);
-//        videoTexture.draw(0, 0, 1024, 768);
-//        myGlitch.generateFx();
-//        ofSetColor(255);
-//        myFbo.draw(100, 100);
-        
-        /* draw normal view */
-//        ofSetColor(255);
-//        myFbo.draw(0, 0);
-
         /* Apply effects */
         myGlitch.generateFx();
 
@@ -124,7 +105,9 @@ void ofApp::draw(){
         string info = "";
         info += "1 - 0 : Apply glitch effects.\n";
         info += "q - u : Apply color remap effects.\n";
-        info += "L key : Switch 3Dview / 2DImage.\n";
+        info += "A key : Credit scene.\n";
+        info += "S key : Camera/Glitch scene.\n";
+        info += "z - x : Scale Camera.\n";
         info += "H key : Hide or show this information.";
 
         if (bShowHelp){
@@ -144,6 +127,7 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     switchMode(key);
+    cameraScaleKey(key);
     if(key == 's' || key == 'S'){
         vidGrabber.videoSettings();
     }
@@ -166,8 +150,7 @@ void ofApp::keyPressed(int key){
     if (key == 't') myGlitch.setFx(OFXPOSTGLITCH_CR_BLUEINVERT    , true);
     if (key == 'y') myGlitch.setFx(OFXPOSTGLITCH_CR_REDINVERT    , true);
     if (key == 'u') myGlitch.setFx(OFXPOSTGLITCH_CR_GREENINVERT    , true);
-
-    if (key == 'l') bDrawLenna ^= true;
+    
     if (key == 'h') bShowHelp ^= true;
 }
 
@@ -242,19 +225,45 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 //--------------------------------------------------------------
 //--------------------------------------------------------------
-//--------------------------------------------------------------
 
 void ofApp::initMode() {
+    /* Initial States */
     isBlankMode = false;
     isGlitchMode = false;
+    
+    /* UDP Listener */
+    UDPConnection.Create();
+    UDPConnection.Bind(11999);
+    UDPConnection.SetNonBlocking(true);
 }
 
 void ofApp::switchMode(int key) {
-    if(key == 'q' || key == 'Q') {
+    if(key == 'a' || key == 'A') {
         isBlankMode = true;
         isGlitchMode = false;
-    } else if(key == 'w' || key == 'W') {
+    } else if(key == 's' || key == 'S') {
         isBlankMode = false;
         isGlitchMode = true;
     }
 }
+
+void ofApp::cameraScaleKey(int key) {
+    if(key == 'z') {
+        if(cameraScaleFactor > 0.5) {
+            cameraScaleFactor = cameraScaleFactor - cameraScaleUnit;
+        }
+    } else if(key == 'x') {
+        if(cameraScaleFactor < 1) {
+            cameraScaleFactor = cameraScaleFactor + cameraScaleUnit;
+        }
+    }
+}
+
+void ofApp::UDPHandler() {
+    char udpMessage[1000];
+    UDPConnection.Receive(udpMessage,100000);
+    string message = udpMessage;
+    ofLogVerbose() << message;
+}
+
+
