@@ -4,6 +4,11 @@ ofPolyline line;
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    /* UDP Listener */
+    UDPConnection.Create();
+    UDPConnection.Bind(11999);
+    UDPConnection.SetNonBlocking(true);
+    
     /* Printing the initial screen sizes */
     ofLogNotice() << ofGetWindowPositionX();
     ofLogNotice() << ofGetWindowPositionY();
@@ -56,30 +61,28 @@ void ofApp::update() {
     UDPHandler();
     
     if(isGlitchMode) {
-        myFbo.begin();
-        vidGrabber.update();
-        if(vidGrabber.isFrameNew()) {
-            ofPixels &pixels = vidGrabber.getPixels();
-            pixels.mirror(false, true);
-            videoTexture.loadData(pixels);
+        if(isCameraShowing) {
+            myFbo.begin();
+            vidGrabber.update();
+            if(vidGrabber.isFrameNew()) {
+                ofPixels &pixels = vidGrabber.getPixels();
+                pixels.mirror(false, true);
+                videoTexture.loadData(pixels);
+            }
+            
+            ofSetHexColor(0xffffff);
+            int screenWidth = ofGetScreenWidth();
+            int screenHeight = ofGetScreenHeight();
+            
+            float widthScale = (screenWidth * cameraScaleFactor);
+            float heightScale = (screenHeight * cameraScaleFactor);
+            
+            float xStart = (screenWidth - widthScale) / 2;
+            float yStart = (screenHeight - heightScale) / 2;
+            
+            videoTexture.draw(xStart, yStart, widthScale, heightScale);
+            myFbo.end();
         }
-        
-        ofSetHexColor(0xffffff);
-        int screenWidth = ofGetScreenWidth();
-        int screenHeight = ofGetScreenHeight();
-        
-        float widthScale = (screenWidth * cameraScaleFactor);
-        float heightScale = (screenHeight * cameraScaleFactor);
-        
-        float xStart = (screenWidth - widthScale) / 2;
-        float yStart = (screenHeight - heightScale) / 2;
-        
-        ofLogNotice() << xStart;
-        ofLogNotice() << yStart;
-        ofLogNotice() << "=====================";
-        
-        videoTexture.draw(xStart, yStart, widthScale, heightScale);
-        myFbo.end();
     } else if(isBlankMode) {
         
         ofBackground(0, 0, 0);
@@ -99,8 +102,7 @@ void ofApp::draw(){
         /* draw effected view */
         ofSetColor(255);
         myFbo.draw(0, 0);
-
-
+        
         /* show information*/
         string info = "";
         info += "1 - 0 : Apply glitch effects.\n";
@@ -226,15 +228,10 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 //--------------------------------------------------------------
 //--------------------------------------------------------------
 
-void ofApp::initMode() {
+void ofApp::init() {
     /* Initial States */
-    isBlankMode = false;
-    isGlitchMode = false;
     
-    /* UDP Listener */
-    UDPConnection.Create();
-    UDPConnection.Bind(11999);
-    UDPConnection.SetNonBlocking(true);
+    
 }
 
 void ofApp::switchMode(int key) {
@@ -261,9 +258,26 @@ void ofApp::cameraScaleKey(int key) {
 
 void ofApp::UDPHandler() {
     char udpMessage[1000];
-    UDPConnection.Receive(udpMessage,100000);
+    UDPConnection.Receive(udpMessage,1000);
     string message = udpMessage;
-    ofLogVerbose() << message;
+    if(!message.empty()) {
+        // ofLogNotice() << message;
+        ofJson jsonObj = ofJson();
+        jsonObj = jsonObj.parse(message);
+        if(!jsonObj["scaleFactor"].is_null()) {
+            float scaleFactor = jsonObj["scaleFactor"];
+            cameraScaleFactor = scaleFactor;
+            ofLogNotice() << jsonObj["scaleFactor"];
+        }
+        if(!jsonObj["isCameraOn"].is_null()) {
+            bool cameraShowing = jsonObj["isCameraOn"];
+            isCameraShowing = cameraShowing;
+            ofLogNotice() << jsonObj["isCameraOn"];
+        }
+        if(!jsonObj["extra"].is_null()) {
+            ofLogNotice() << jsonObj["extra"];
+        }
+    }
 }
 
 

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxPostGlitch.h"
 #include "ofxNetwork.h"
+#include "ofJson.h"
 
 class ofApp : public ofBaseApp{
 
@@ -34,6 +35,7 @@ class ofApp : public ofBaseApp{
         ofImage             lenna;
         bool                bDrawLenna;
         bool                bShowHelp;
+        bool                isCameraShowing = true;
         float              cameraScaleFactor = 1;
         float              cameraScaleUnit = 0.01;
         
@@ -45,10 +47,9 @@ class ofApp : public ofBaseApp{
     
     private:
         
-        void initMode();
+        void init();
         void switchMode(int key);
         void cameraScaleKey(int key);
         void UDPHandler();
-        
-		
+    
 };
